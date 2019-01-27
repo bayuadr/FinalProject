@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-import ListMovie from './ListMovie'
+import ListMovie from '../Atom/ListMovie'
 import Title from '../Atom/Title'
 
 class Container extends  React.Component{

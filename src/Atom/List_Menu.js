@@ -21,7 +21,7 @@ handleChange(event) {
   this.setState({text: event.target.value});
 }
   render(){
-    console.log(this.state.text)
+    
   return (
       
     <div>

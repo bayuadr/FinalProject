@@ -1,6 +1,7 @@
 const variable = {
     data: [],
-    loading : true
+    loading : true,
+    comment : [],
 }
 
 export const reducers = (state = {...variable},action) =>{
