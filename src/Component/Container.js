@@ -6,7 +6,7 @@ import Title from '../Atom/Title'
 class Container extends  React.Component{
      
     render(){
-        const {req_data,title} = this.props
+        const {req_data,title,index} = this.props
         if (req_data == 'New_Movie'){
             return(
                 <div>
@@ -32,7 +32,7 @@ class Container extends  React.Component{
                                 <div className="judul_all">
                                     <Title value={title} style={'Judul'}/>
                                 </div>
-                                <ListMovie req ={req_data}/>
+                                <ListMovie req ={req_data} index={index}/>
                             </div>
                         </div>
                     </div>

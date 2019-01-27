@@ -48,6 +48,16 @@ a{
   font-weight: bolder;
 }
 
+.List_movie_detail {
+  width: 100%;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+  margin-top:10%;
+  margin-bottom:50px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 10px 10px 10px 10px;
+  
+}
+
 .List_movie {
   width: 300px;
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
@@ -57,6 +67,7 @@ a{
   padding: 10px 10px 10px 10px;
   
 }
+
 
 .List_movie img{
   margin-left:-10px;
@@ -86,6 +97,7 @@ a{
   font-weight: bolder;
   color:white;
   padding:10px 0 10px 0;
+  margin-top:6.45%;
 }
 
 

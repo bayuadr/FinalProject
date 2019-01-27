@@ -1,84 +1,33 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import InputBase from '@material-ui/core/InputBase';
-import { fade } from '@material-ui/core/styles/colorManipulator';
-import { withStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
 import TabContainer from './Link_Menu';
 import SearchIcon from '@material-ui/icons/Search';
+import {Link} from 'react-router-dom';
 
-const styles = theme => ({
-  root: {
-    width: '100%',
-   
-  },
-  grow: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginLeft: -12,
-    marginRight: 20,
-  },
-  title: {
-    display: 'none',
-    [theme.breakpoints.up('sm')]: {
-      display: 'block',
-    },
-  },
-  search: {
-    marginTop:'20px',
-    position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
-    '&:hover': {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
-    },
-    marginLeft: 0,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing.unit,
-      width: 'auto',
-    },
-  },
-  searchIcon: {
-    width: theme.spacing.unit * 9,
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  inputRoot: {
-    color: 'inherit',
-    width: '100%',
-  },
-  inputInput: {
-      
-    paddingTop: theme.spacing.unit,
-    paddingRight: theme.spacing.unit,
-    paddingBottom: theme.spacing.unit,
-    paddingLeft: theme.spacing.unit * 10,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      width: 120,
-      '&:focus': {
-        width: 200,
-      },
-    },
-  },
-});
-
-function SearchAppBar(props) {
-  const { classes } = props;
-  return (
+class List_Menu extends React.Component {
  
-    <div className={classes.root}>
+constructor(props) {    
+    super(props);    
+    this.state = {    
+      text :"",    
+    }   
+    this.handleChange = this.handleChange.bind(this)
+ 
+}  
+
+handleChange(event) {
+  this.setState({text: event.target.value});
+}
+  render(){
+    console.log(this.state.text)
+  return (
+      
+    <div>
       <AppBar position="static">
         <Toolbar style={{ backgroundColor : '#1b1b1b'}}>
-        <div className='container'>
+          <div className='container'>
             <div className='row'>
                 <div class='col-sm-2 col-md-2 col-lg-2'>
                     <img style={{width:'155px',height:'75px'}} src='https://hacktiv8.com/img/logo-01.png__vzu2vhp2VRX%2Bewg7J0bPlaA0f4f1c19c0064d527c72d44cfe007a08'/>
@@ -88,33 +37,30 @@ function SearchAppBar(props) {
                     <TabContainer />
                 </div>
                 
-                <div class='col-sm-4 col-md-4 col-lg-4'>
-                <div className={classes.grow} />
               
-                    <div className={classes.search}>
-                        <div className={classes.searchIcon}>
+                    <div className='col-sm-4 col-md-4 col-lg-4'>
+                      <div className='row' style={{marginTop:'20px'}}>
+                        <div className='col-sm-1 col-md-1 col-lg-1'>
+                        <Link to={`/Search/${this.state.text}`} style={{color:'white',textDecoration:'none'}}>
                             <SearchIcon />
+                          </Link>  
                         </div>
-                            <InputBase 
-                                placeholder="Search…"
-                                classes={{
-                                root: classes.inputRoot,
-                                input: classes.inputInput,
-                                }}
-                            />
+                        <div className='col-sm-8 col-md-8 col-lg-8'>
+                            <TextField style={{backgroundColor:'white'}}  onChange={this.handleChange} />
+                        </div>
+                        
+                      </div>
+                        
                     </div>
-                </div>
-                </div>
-            </div>
+              </div>
+          </div>
         </Toolbar>
       </AppBar>
     </div>
     
   );
+  }
 }
 
-SearchAppBar.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
 
-export default withStyles(styles)(SearchAppBar);
+export default List_Menu;
