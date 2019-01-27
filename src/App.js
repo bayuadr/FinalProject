@@ -1,16 +1,23 @@
 import React, { Component } from 'react';
 import './App.css';
-import Menu from "./Component/Menu"
-import Container from "./Component/Container"
-import Footer from "./Component/Footer"
+import Home from './Page/Home';
+import Explore from './Page/Explore'
+import {Provider} from 'react-redux'
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import store from './Redux/Index'
 
 class App extends Component {
   render() {
     return (
       <div>
-        <Menu/>
-        <Container/>
-        <Footer/>
+      <Provider store={store}>
+      <BrowserRouter>
+         <Switch> 
+            <Route exact path="/" component={Home}/>
+            <Route exact path="/Explore" component={Explore}/>   
+          </Switch>   
+      </BrowserRouter>
+      </Provider>
       </div>
     );
   }

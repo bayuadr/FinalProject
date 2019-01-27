@@ -1,3 +1,8 @@
+a{
+  text-decoration:'none';
+  color:'white'
+}
+
 .Menu{
   width: 100%;
   height: auto;
@@ -37,6 +42,11 @@
   margin-top:25%;
   font-weight: bolder;
 }
+.judul_all{
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+  margin-top:5%;
+  font-weight: bolder;
+}
 
 .List_movie {
   width: 300px;
@@ -63,7 +73,7 @@
 }
 
 .List_movie h6{
-  color: #DEDEDE;
+  color: #D0D9D8;
 }
 
 
@@ -77,5 +87,7 @@
   color:white;
   padding:10px 0 10px 0;
 }
+
+
 
 
