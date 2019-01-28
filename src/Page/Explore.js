@@ -9,7 +9,7 @@ class Explore extends React.Component{
     render(){
         return (
             <div>
-              <Menu/>
+              <Menu value={this.props.history}/>
               <Container req_data={'All_Movie'} title={'All Movie'}/>
               <Footer/>
             </div>

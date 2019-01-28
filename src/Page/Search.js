@@ -10,7 +10,7 @@ class Detail extends React.Component{
         const {movie_name} = this.props.match.params
         return (
             <div>
-              <Menu/>
+              <Menu value={this.props.history}/>
               <Container req_data={'Seacrh_Movie'} index={movie_name} title={'Search Movie'}/>
               <Footer/>
             </div>

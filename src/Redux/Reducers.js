@@ -1,7 +1,8 @@
 const variable = {
     data: [],
     loading : true,
-    comment : [],
+    comment : ['Good Movie','Nice Movie','I Like It !!!!'],
+    username : ''
 }
 
 export const reducers = (state = {...variable},action) =>{
@@ -11,6 +12,17 @@ export const reducers = (state = {...variable},action) =>{
             ...state,
             loading:false,
             data:action.payload
+        })
+        case 'PushComment' :
+        
+        return({
+            ...state,
+            comment: [...state.comment, action.payload]
+        })
+        case 'Login' :
+        return ({
+            ...state,
+            username : action.payload
         })
         default :
         return state

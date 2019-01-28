@@ -37,3 +37,13 @@ export const reqUsersError= (payload)=>({
     type:'Fetc_eror',
     payload
 })
+
+export const pushComment = (payload)=>({
+    type:'PushComment',
+    payload,
+})
+
+export const login = (payload)=>({
+    type:'Login',
+    payload
+})

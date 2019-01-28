@@ -17,6 +17,13 @@ constructor(props) {
  
 }  
 
+OnKeyPress = (e) => {
+  if(e.key == 'Enter'){
+    this.props.value.push(`/Search/${this.state.text}`)
+  } 
+                        
+}
+
 handleChange(event) {
   this.setState({text: event.target.value});
 }
@@ -46,7 +53,8 @@ handleChange(event) {
                           </Link>  
                         </div>
                         <div className='col-sm-8 col-md-8 col-lg-8'>
-                            <TextField style={{backgroundColor:'white'}}  onChange={this.handleChange} />
+                        
+                            <TextField style={{backgroundColor:'white'}}  onKeyPress={this.OnKeyPress} onChange={this.handleChange} />
                         </div>
                         
                       </div>

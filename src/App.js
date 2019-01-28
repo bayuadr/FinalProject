@@ -20,6 +20,7 @@ class App extends Component {
             <Route exact path="/Explore" component={Explore}/>  
             <Route exact path ="/Detail/:index" component={Detail}/>
             <Route exact path ="/Search/:movie_name" component={Search}/>
+            
           </Switch>   
       </BrowserRouter>
       </Provider>

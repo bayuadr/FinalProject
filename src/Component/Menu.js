@@ -20,6 +20,7 @@ const styles = theme => ({
 class Menu extends React.Component{
    
     render(){
+          
         const { classes,value } = this.props;
         if(value == 'Home'){
             return(
@@ -28,7 +29,7 @@ class Menu extends React.Component{
                    <img src={background}/>
                 </div>
                 <div className="Content_Top">
-                      <center><h3>Explore the movie at Hacktiv8 MovieDB.</h3></center>
+                      <center><h4><b>Explore the movie at Hacktiv8 MovieDB.</b></h4></center>
                       <center>
                     <Link to = '/Explore'>
                     <Fab variant="extended" className={classes.fab} style={{width:'55%'}} size='large'>
@@ -45,7 +46,7 @@ class Menu extends React.Component{
         else{
             return (
                 
-                <SearchAppBar/>
+                <SearchAppBar value={value}/>
             )
         }
        
